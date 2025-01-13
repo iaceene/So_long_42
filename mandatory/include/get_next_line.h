@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 18:07:56 by yaajagro         ###   ########.fr       */
+/*   Created: 2024/11/12 01:57:15 by yaajagro          #+#    #+#             */
+/*   Updated: 2024/11/13 14:32:27 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# include <stdlib.h>
-# include <fcntl.h>
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 # include <unistd.h>
-# include <limits.h>
-# include "../../mlx_linux/mlx.h"
-# include "get_next_line.h"
+# include <stdlib.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 12
+# endif
 
-typedef struct s_gb
-{
-	void		*ptr;
-	struct s_gb	*next;   
-}t_gb;
-
-typedef struct s_list
-{
-	char	*map;
-	int		hight;
-	int		wight;
-	int		is_valid;
-}t_list;
-
-void	*ft_malloc(ssize_t len);
-char	**ft_split(char const *s, char c);
+char	*get_next_line(int fd);
+char	*ft_join(char *s1, char *s2);
+int		ft_strlen(char *s);
+char	*ft_sub(char *s);
+char	*ft_strdup(char *s);
 
 #endif

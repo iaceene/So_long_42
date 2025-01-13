@@ -1,5 +1,8 @@
 SRC =	./mandatory/memory/memory_tracker.c \
-		./mandatory/src/main.c
+		./mandatory/src/main.c \
+		./mandatory/src/get_next_line_utils.c \
+		./mandatory/src/get_next_line.c \
+		./mandatory/src/ft_splite.c
 
 
 
