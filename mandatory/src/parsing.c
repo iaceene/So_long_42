@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:02:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 19:04:33 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/13 22:40:18 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_check_wall(char *s, int flag)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (flag == 1)
 	{
-		while(s[i])
+		while (s[i])
 		{
 			if (s[i] != '1')
 				return (-1);
@@ -34,7 +34,7 @@ int	ft_check_wall(char *s, int flag)
 	return (0);
 }
 
-void ft_map_checker(t_list *data)
+void	ft_map_checker(t_list *data)
 {
 	char	**map;
 	int		i;
@@ -42,7 +42,7 @@ void ft_map_checker(t_list *data)
 
 	i = 0;
 	map = ft_split(data->map, '\n');
-	while(map[i])
+	while (map[i])
 	{
 		if (i == 0 || i == data->hight)
 			err = ft_check_wall(map[i], 1);
@@ -57,24 +57,24 @@ void ft_map_checker(t_list *data)
 	}
 }
 
-int ft_check_extention(char *file)
+int	ft_check_extention(char *file)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (file[i] && file[i] != '.')
 		i++;
-	if (ft_strncmp(file + i, ".ber", ft_strlen(".ber")) != 0)
+	if (ft_strncmp(file + i, ".ber", ft_strlen(file + i)) != 0)
 		return (1);
 	return (0);
 }
 
-void ft_map_content(t_list *data)
+void	ft_map_content(t_list *data)
 {
-	int i;
-	int exit;
-	int col;
-	int start;
+	int	i;
+	int	exit;
+	int	col;
+	int	start;
 
 	i = 0;
 	exit = 0;
@@ -96,7 +96,7 @@ void ft_map_content(t_list *data)
 		data->is_valid = 0;
 }
 
-int ft_init(char *file, t_list *data)
+int	ft_init(char *file, t_list *data)
 {
 	char	*s;
 	int		fd;
@@ -107,8 +107,12 @@ int ft_init(char *file, t_list *data)
 	fd = open(file, 0);
 	if (fd == -1 || ft_check_extention(file))
 		return (data->is_valid = 0, 1);
-	while((s = get_next_line(fd)))
+	s = get_next_line(fd);
+	while (s)
+	{
 		tmp = ft_join(tmp, s);
+		s = get_next_line(fd);
+	}
 	data->map = tmp;
 	ft_map_set(data);
 	ft_map_checker(data);

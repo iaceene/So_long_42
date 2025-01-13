@@ -6,15 +6,15 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:05:32 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 19:05:33 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/13 22:37:26 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int main(int c, char **v)
+int	main(int c, char **v)
 {
-	t_list data;
+	t_list	data;
 
 	if (c != 2)
 		return (ft_puterr("usage .. \n"), 1);

@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 19:07:11 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/13 22:41:52 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <limits.h>
-# include "../../mlx_linux/mlx.h"
+// # include "../../mlx_linux/mlx.h"
 # include "get_next_line.h"
 
 typedef struct s_gb
 {
 	void		*ptr;
-	struct s_gb	*next;   
+	struct s_gb	*next;
 }t_gb;
 
 typedef struct s_list

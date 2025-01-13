@@ -6,19 +6,19 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:04:59 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 19:05:26 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/13 22:39:25 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void ft_puterr(char *s)
+void	ft_puterr(char *s)
 {
 	while (*s)
 		write(2, s++, 1);
 }
 
-void ft_map_set(t_list *data)
+void	ft_map_set(t_list *data)
 {
 	char	*tmp;
 	int		i;
@@ -59,7 +59,8 @@ int	ft_strncmp(char *str1, char *str2, size_t n)
 	return (0);
 }
 
-int ft_charcter_check(char c)
+int	ft_charcter_check(char c)
 {
-	return (c == 'C' || c == 'P' || c == '0' || c == '1' || c == 'E' || c == '\n');
+	return (c == 'C' || c == 'P' || c == '0'
+		|| c == '1' || c == 'E' || c == '\n');
 }
