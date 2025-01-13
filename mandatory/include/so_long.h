@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 14:56:49 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:41:18 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include "../mlx_linux/mlx.h"
+# include "../../mlx_linux/mlx.h"
 
 typedef struct s_gb
 {
@@ -24,6 +24,6 @@ typedef struct s_gb
     
 }t_gb;
 
-void    *ft_malloc(size_t n);
+void *ft_malloc(size_t len, int flag);
 
 #endif

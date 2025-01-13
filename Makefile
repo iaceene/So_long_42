@@ -1,4 +1,5 @@
-SRC = ./mandatory/main.c
+SRC =	./mandatory/memory/memory_tracker.c \
+		./mandatory/src/main.c
 
 
 
