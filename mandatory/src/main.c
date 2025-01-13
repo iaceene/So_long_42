@@ -3,11 +3,8 @@
 
 int main(int c, char **v)
 {
-    if (c == 2)
-    {
-        ft_check_map(v[1]);
-        ft_init();
-    }
-    else
-        ft_puterror("Error\n");
+	if (c != 2)
+		return (ft_puterr("usage .. \n"), 1);
+	
+	return (ft_malloc(0, 1), 0);
 }

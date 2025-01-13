@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 16:37:38 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:47:46 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ void	ft_add_new(t_gb **head, t_gb *new)
 	}
 }
 
-void	*ft_malloc(size_t len, int flag)
+void	*ft_malloc(ssize_t len)
 {
 	static t_gb	*head;
 	void		*ptr;
 
-	if (flag == 1)
+	if (len < 0)
 	{
 		ft_free(&head);
 		return (NULL);
