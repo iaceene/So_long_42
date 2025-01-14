@@ -6,11 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 15:46:01 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/14 16:33:34 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:44:37 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
 char	**ft_copy_map(char **map)
 {

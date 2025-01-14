@@ -6,11 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 00:04:11 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 17:10:59 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:44:27 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
 static char	*ft_nextline(char *s)
 {

@@ -6,11 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:04:59 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 22:39:25 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:44:48 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
 void	ft_puterr(char *s)
 {

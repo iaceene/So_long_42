@@ -1,11 +1,11 @@
 SRC =	./mandatory/memory/memory_tracker.c \
 		./mandatory/src/main.c \
-		./mandatory/src/get_next_line_utils.c \
-		./mandatory/src/get_next_line.c \
-		./mandatory/src/ft_splite.c \
-		./mandatory/src/parsing.c \
-		./mandatory/src/parsing_utiles.c \
-		./mandatory/src/ft_check_path.c
+		./mandatory/src/get_next_line/get_next_line_utils.c \
+		./mandatory/src/get_next_line/get_next_line.c \
+		./mandatory/src/parse/ft_splite.c \
+		./mandatory/src/parse/parsing.c \
+		./mandatory/src/parse/parsing_utiles.c \
+		./mandatory/src/parse/ft_check_path.c
 
 
 

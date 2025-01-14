@@ -6,11 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 01:57:06 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 17:11:43 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:44:22 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
 char	*ft_join(char *s1, char *s2)
 {

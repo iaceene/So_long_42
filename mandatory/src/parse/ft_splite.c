@@ -6,11 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:43:54 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 18:07:12 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:44:42 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
 static int	ft_isspliter(char c, char spliter)
 {

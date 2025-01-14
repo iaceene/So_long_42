@@ -6,11 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:02:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/14 15:57:03 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:44:53 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
 int	ft_check_wall(char *s, int flag)
 {
