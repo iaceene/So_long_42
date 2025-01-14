@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:02:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/13 22:40:18 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:57:03 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_map_checker(t_list *data)
 
 	i = 0;
 	map = ft_split(data->map, '\n');
+	data->map2d = map;
 	while (map[i])
 	{
 		if (i == 0 || i == data->hight)
@@ -118,5 +119,7 @@ int	ft_init(char *file, t_list *data)
 	ft_map_checker(data);
 	if (data->is_valid == 1)
 		ft_map_content(data);
+	if (data->is_valid == 1)
+		ft_check_path(data);
 	return (0);
 }

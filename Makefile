@@ -4,7 +4,8 @@ SRC =	./mandatory/memory/memory_tracker.c \
 		./mandatory/src/get_next_line.c \
 		./mandatory/src/ft_splite.c \
 		./mandatory/src/parsing.c \
-		./mandatory/src/parsing_utiles.c
+		./mandatory/src/parsing_utiles.c \
+		./mandatory/src/ft_check_path.c
 
 
 
@@ -14,8 +15,8 @@ NAME = so_long
 OBJ = $(SRC:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-LDFLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
-MLX_LIB = ./mlx_linux/libmlx_Linux.a
+#LDFLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
+#MLX_LIB = ./mlx_linux/libmlx_Linux.a
 
 all : $(NAME)
 
@@ -23,7 +24,7 @@ all : $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(MLX_LIB) $(LDFLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ)  -o $(NAME)
 
 clean :
 	rm -f $(OBJ)
