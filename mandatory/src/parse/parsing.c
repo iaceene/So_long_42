@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:02:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/14 17:44:53 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/14 18:04:47 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,15 @@ void	ft_map_content(t_list *data)
 	int	col;
 	int	start;
 
-	i = 0;
+	i = -1;
 	exit = 0;
 	col = 0;
 	start = 0;
-	while (data->map[i])
+	while (data->map[++i])
 	{
+		if (data->map[i] == '\n'
+			&& (data->map[i + 1] == '\n' || data->map[i + 1] == '\0'))
+			data->is_valid = 0;
 		if (!ft_charcter_check(data->map[i]))
 			data->is_valid = 0;
 		if (data->map[i] == 'E')
@@ -91,7 +94,6 @@ void	ft_map_content(t_list *data)
 			col++;
 		else if (data->map[i] == 'P')
 			start++;
-		i++;
 	}
 	if (exit != 1 || col < 1 || start != 1)
 		data->is_valid = 0;
