@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:02:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/14 18:04:47 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 18:19:44 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int	ft_check_extention(char *file)
 	i = 0;
 	while (file[i] && file[i] != '.')
 		i++;
+	if (!file[i])
+		return (1);
 	if (ft_strncmp(file + i, ".ber", ft_strlen(file + i)) != 0)
 		return (1);
 	return (0);

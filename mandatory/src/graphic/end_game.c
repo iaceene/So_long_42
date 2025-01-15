@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:39:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 16:26:43 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 18:20:33 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	ft_end_game(t_vars *vars)
 	mlx_destroy_window(vars->mlx, vars->win);
 	free(vars->mlx);
 	ft_malloc(-1);
-	ft_puterr("bye!\n");
+	ft_putstr("bye!\n");
 	exit(0);
 }
