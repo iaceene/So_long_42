@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_game.c                                       :+:      :+:    :+:   */
+/*   move_handel.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 20:33:46 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 11:45:50 by yaajagro         ###   ########.fr       */
+/*   Created: 2025/01/15 11:45:35 by yaajagro          #+#    #+#             */
+/*   Updated: 2025/01/15 11:47:55 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
-#include <stdio.h>
 
 
-
-
-
-void	start_game(t_list *data)
+int ft_valid_move(int move, t_vars *vars)
 {
-	t_vars	vars;
-
-	if (data->is_valid == 0)
-		return ;
-	else
-		vars.mlx = mlx_init();
-	int size_x = data->wight * 64;
-	int size_y = data->hight * 64;
-	vars.data = data;
-	vars.win = mlx_new_window(vars.mlx, size_x, size_y, "Worm");
-	ft_render(&vars);
-	mlx_key_hook(vars.win, key_hook, &vars);
-	mlx_loop(vars.mlx);
+	if (move == 1)
+		if (move_up(vars))
+			return (1);
+	if (move == 2)
+		if (move_down(vars))
+			return (1);
+	if (move == 3)
+		if (move_left(vars))
+			return (1);
+	if (move == 4)
+		if (move_right(vars))
+			return (1);
+	return (0);
 }
+
+void ft_move_player(int move, t_vars *vars)
+{
+	static int count;
+	
+	if (ft_valid_move(move, vars))
+	{
+		ft_render(vars);
+		count++;
+	}
+	// printf("move : %d\n", count);
+}
+

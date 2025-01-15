@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_game.c                                       :+:      :+:    :+:   */
+/*   end_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 20:33:46 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 11:45:50 by yaajagro         ###   ########.fr       */
+/*   Created: 2025/01/15 11:39:12 by yaajagro          #+#    #+#             */
+/*   Updated: 2025/01/15 11:39:30 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
-#include <stdio.h>
 
-
-
-
-
-void	start_game(t_list *data)
+void ft_end_game(t_vars *vars)
 {
-	t_vars	vars;
-
-	if (data->is_valid == 0)
-		return ;
-	else
-		vars.mlx = mlx_init();
-	int size_x = data->wight * 64;
-	int size_y = data->hight * 64;
-	vars.data = data;
-	vars.win = mlx_new_window(vars.mlx, size_x, size_y, "Worm");
-	ft_render(&vars);
-	mlx_key_hook(vars.win, key_hook, &vars);
-	mlx_loop(vars.mlx);
+	mlx_destroy_display(vars->mlx);
+	mlx_destroy_window(vars->mlx, vars->win);
+	// mlx_destroy_image(vars->mlx, vars->img->apple);
+	// mlx_destroy_image(vars->mlx, vars->img->worm);
+	// mlx_destroy_image(vars->mlx, vars->img->wall);
+	// mlx_destroy_image(vars->mlx, vars->img->ground);
+	// mlx_destroy_image(vars->mlx, vars->img->hole);
+	free(vars->mlx);
+	ft_malloc(-1);
+	ft_puterr("bye!\n");
+	exit(0);
 }
