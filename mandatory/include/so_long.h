@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 11:46:19 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:06:18 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,9 @@ int move_right(t_vars *vars);
 void ft_end_game(t_vars *vars);
 char *ft_set_images(t_images *img, t_vars *vars);
 void ft_put_images(t_images *img, t_vars *vars);
-int	ft_render(t_vars *vars);
+int	ft_render(t_vars *vars, int move);
 int	key_hook(int keycode, t_vars *vars);
 void ft_key_press(int key, t_vars *vars);
-void ft_move_player(int move, t_vars *vars);
-int ft_valid_move(int move, t_vars *vars);
 
 
 #endif

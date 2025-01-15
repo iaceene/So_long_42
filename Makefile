@@ -9,7 +9,6 @@ SRC =	./mandatory/memory/memory_tracker.c \
 		./mandatory/src/graphic/start_game.c \
 		./mandatory/src/graphic/movement.c \
 		./mandatory/src/graphic/key_handel.c \
-		./mandatory/src/graphic/move_handel.c \
 		./mandatory/src/graphic/end_game.c \
 		./mandatory/src/graphic/render.c
 

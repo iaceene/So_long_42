@@ -6,15 +6,12 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 20:33:46 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 11:45:50 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:06:23 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 #include <stdio.h>
-
-
-
 
 
 void	start_game(t_list *data)
@@ -29,7 +26,7 @@ void	start_game(t_list *data)
 	int size_y = data->hight * 64;
 	vars.data = data;
 	vars.win = mlx_new_window(vars.mlx, size_x, size_y, "Worm");
-	ft_render(&vars);
+	ft_render(&vars, 0);
 	mlx_key_hook(vars.win, key_hook, &vars);
 	mlx_loop(vars.mlx);
 }

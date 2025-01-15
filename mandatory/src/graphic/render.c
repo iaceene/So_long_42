@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:41:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 11:42:48 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:06:38 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ char *ft_set_images(t_images *img, t_vars *vars)
 	img->ground = mlx_xpm_file_to_image(vars->mlx, "./mandatory/src/graphic/imgs/ground.xpm", &w, &h);
 	if (!img->ground)
 		return (NULL);
-	vars->img = img;
 	return ("Valid");
 }
 
@@ -65,16 +64,47 @@ void ft_put_images(t_images *img, t_vars *vars)
 	}
 }
 
-int	ft_render(t_vars *vars)
+void    ft_map_rebuild(t_vars *vars, int move)
+{
+	int x = vars->data->player_x;
+	int y = vars->data->player_y;
+
+	if (move == 1)
+	{
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->worm,  x * 64, y * 64);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->ground,  x * 64, (y + 1) * 64);
+	}
+	if (move == 2)
+	{
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->worm,  x * 64, y * 64);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->ground,  x * 64, (y - 1) * 64);
+	}
+	if (move == 3)
+	{
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->worm,  x * 64, y * 64);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->ground,  (x + 1) * 64, y * 64);
+	}
+	if (move == 4)
+	{
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->worm,  x * 64, y * 64);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->ground,  (x - 1) * 64, y * 64);
+	}
+}
+
+int	ft_render(t_vars *vars, int move)
 {
 	static char *status;
-	static int state;
-	t_images img;
+	static t_images img;
 
-	if (state == 0)
+	if (move == 0)
+	{
 		status = ft_set_images(&img, vars);
-	if (!status)
-		ft_end_game(vars);
-	ft_put_images(&img, vars);
+		if (status)
+			ft_put_images(&img, vars);
+		else
+			ft_end_game(vars);
+		vars->img = &img;
+	}
+	ft_map_rebuild(vars, move);
 	return (0);
 }
