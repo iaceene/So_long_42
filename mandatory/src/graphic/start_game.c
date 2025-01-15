@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 20:33:46 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 16:25:36 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 18:12:30 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	start_game(t_list *data)
 		return ;
 	else
 		vars.mlx = mlx_init();
-	size_x = data->wight * 64;
+	size_x = (data->wight - 1) * 64;
 	size_y = data->hight * 64;
 	vars.data = data;
 	vars.win = mlx_new_window(vars.mlx, size_x, size_y, "Worm");
