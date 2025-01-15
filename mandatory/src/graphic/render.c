@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:41:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 16:58:22 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 17:20:56 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int	ft_render(t_vars *vars, int move)
 {
 	static char		*status;
 	static t_images	img;
+	static int		number;
 
 	if (move == 0)
 	{
@@ -111,6 +112,8 @@ int	ft_render(t_vars *vars, int move)
 			ft_end_game(vars);
 		vars->img = &img;
 	}
+	ft_putnbr(number);
 	ft_map_rebuild(vars, move);
+	number++;
 	return (0);
 }

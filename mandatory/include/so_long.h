@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 16:58:48 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 17:19:47 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int	ft_render(t_vars *vars, int move);
 int	key_hook(int keycode, t_vars *vars);
 void ft_key_press(int key, t_vars *vars);
 void    ft_map_rebuild(t_vars *vars, int move);
+void	ft_putnbr(int n);
+void ft_putstr(char *s);
 
 
 #endif

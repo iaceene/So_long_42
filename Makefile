@@ -7,6 +7,7 @@ SRC =	./mandatory/memory/memory_tracker.c \
 		./mandatory/src/parse/parsing_utiles.c \
 		./mandatory/src/parse/ft_check_path.c \
 		./mandatory/src/graphic/start_game.c \
+		./mandatory/src/graphic/print_moves.c \
 		./mandatory/src/graphic/movement.c \
 		./mandatory/src/graphic/key_handel.c \
 		./mandatory/src/graphic/end_game.c \
