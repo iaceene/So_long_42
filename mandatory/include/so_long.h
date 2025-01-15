@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 13:06:18 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:58:48 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ typedef struct s_images
 	void	*wall;
 	void	*hole;
 	void	*ground;
+	int		x;
+	int		y;
 } t_images;
 
 typedef struct	s_vars {
@@ -80,6 +82,7 @@ void ft_put_images(t_images *img, t_vars *vars);
 int	ft_render(t_vars *vars, int move);
 int	key_hook(int keycode, t_vars *vars);
 void ft_key_press(int key, t_vars *vars);
+void    ft_map_rebuild(t_vars *vars, int move);
 
 
 #endif

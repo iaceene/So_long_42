@@ -6,95 +6,101 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:41:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 13:06:38 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:58:22 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-char *ft_set_images(t_images *img, t_vars *vars)
+void	*xpm_converter(void *mlx, int img)
 {
-	int h;
-	int w;
+	int	h;
+	int	w;
 
-	h = 64;
-	w = 64;
-	img->apple = mlx_xpm_file_to_image(vars->mlx, "./mandatory/src/graphic/imgs/apple.xpm", &w, &h);
+	if (img == 1)
+		return (mlx_xpm_file_to_image(mlx,
+				"./mandatory/src/graphic/imgs/apple.xpm", &w, &h));
+	if (img == 2)
+		return (mlx_xpm_file_to_image(mlx,
+				"./mandatory/src/graphic/imgs/worm.xpm", &w, &h));
+	if (img == 3)
+		return (mlx_xpm_file_to_image(mlx,
+				"./mandatory/src/graphic/imgs/wall.xpm", &w, &h));
+	if (img == 4)
+		return (mlx_xpm_file_to_image(mlx,
+				"./mandatory/src/graphic/imgs/hole.xpm", &w, &h));
+	if (img == 5)
+		return (mlx_xpm_file_to_image(mlx,
+				"./mandatory/src/graphic/imgs/ground.xpm", &w, &h));
+	return (NULL);
+}
+
+char	*ft_set_images(t_images *img, t_vars *vars)
+{
+	img->apple = xpm_converter(vars->mlx, 1);
 	if (!img->apple)
 		return (NULL);
-	img->worm = mlx_xpm_file_to_image(vars->mlx, "./mandatory/src/graphic/imgs/worm.xpm", &w, &h);
+	img->worm = xpm_converter(vars->mlx, 2);
 	if (!img->worm)
 		return (NULL);
-	img->wall = mlx_xpm_file_to_image(vars->mlx, "./mandatory/src/graphic/imgs/wall.xpm", &w, &h);
+	img->wall = xpm_converter(vars->mlx, 3);
 	if (!img->wall)
 		return (NULL);
-	img->hole = mlx_xpm_file_to_image(vars->mlx, "./mandatory/src/graphic/imgs/hole.xpm", &w, &h);
+	img->hole = xpm_converter(vars->mlx, 4);
 	if (!img->hole)
 		return (NULL);
-	img->ground = mlx_xpm_file_to_image(vars->mlx, "./mandatory/src/graphic/imgs/ground.xpm", &w, &h);
+	img->ground = xpm_converter(vars->mlx, 5);
 	if (!img->ground)
 		return (NULL);
 	return ("Valid");
 }
 
-void ft_put_images(t_images *img, t_vars *vars)
+void	ft_put_img_to_win(t_images *img, void *mlx, void *win, char c)
 {
-	int x;
-	int y;
-	char **map = vars->data->map2d;
+	if (c == '0')
+		mlx_put_image_to_window(mlx, win,
+			img->ground, img->x, img->y);
+	else if (c == '1')
+		mlx_put_image_to_window(mlx, win,
+			img->wall, img->x, img->y);
+	else if (c == 'C')
+		mlx_put_image_to_window(mlx, win,
+			img->apple, img->x, img->y);
+	else if (c == 'P')
+		mlx_put_image_to_window(mlx, win,
+			img->worm, img->x, img->y);
+	else if (c == 'E')
+		mlx_put_image_to_window(mlx, win,
+			img->hole, img->x, img->y);
+}
+
+void	ft_put_images(t_images *img, t_vars *vars)
+{
+	int		x;
+	int		y;
+	char	**map;
+
+	map = vars->data->map2d;
 	y = 0;
 	while (map[y])
 	{
 		x = 0;
 		while (map[y][x])
 		{
-			if (map[y][x] == '0')
-				mlx_put_image_to_window(vars->mlx, vars->win, img->ground, x * 64, y * 64);
-			else if (map[y][x] == '1')
-				mlx_put_image_to_window(vars->mlx, vars->win, img->wall,  x * 64, y * 64);
-			else if (map[y][x] == 'C')
-				mlx_put_image_to_window(vars->mlx, vars->win, img->apple,  x * 64, y * 64);
-			else if (map[y][x] == 'P')
-				mlx_put_image_to_window(vars->mlx, vars->win, img->worm,  x * 64, y * 64);
-			else if (map[y][x] == 'E')
-				mlx_put_image_to_window(vars->mlx, vars->win, img->hole,  x * 64, y * 64);
+			img->x = x * 64;
+			img->y = y * 64;
+			ft_put_img_to_win(img, vars->mlx,
+				vars->win, map[y][x]);
 			x++;
 		}
 		y++;
 	}
 }
 
-void    ft_map_rebuild(t_vars *vars, int move)
-{
-	int x = vars->data->player_x;
-	int y = vars->data->player_y;
-
-	if (move == 1)
-	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->worm,  x * 64, y * 64);
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->ground,  x * 64, (y + 1) * 64);
-	}
-	if (move == 2)
-	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->worm,  x * 64, y * 64);
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->ground,  x * 64, (y - 1) * 64);
-	}
-	if (move == 3)
-	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->worm,  x * 64, y * 64);
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->ground,  (x + 1) * 64, y * 64);
-	}
-	if (move == 4)
-	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->worm,  x * 64, y * 64);
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img->ground,  (x - 1) * 64, y * 64);
-	}
-}
-
 int	ft_render(t_vars *vars, int move)
 {
-	static char *status;
-	static t_images img;
+	static char		*status;
+	static t_images	img;
 
 	if (move == 0)
 	{

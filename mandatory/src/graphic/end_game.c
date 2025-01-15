@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:39:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 15:19:34 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:26:43 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_distory_imgs(t_vars *vars)
 	mlx_destroy_image(vars->mlx, vars->img->hole);
 }
 
-void ft_end_game(t_vars *vars)
+void	ft_end_game(t_vars *vars)
 {
 	ft_distory_imgs(vars);
 	mlx_destroy_display(vars->mlx);

@@ -6,24 +6,24 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 20:33:46 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 13:06:23 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:25:36 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
-#include <stdio.h>
-
 
 void	start_game(t_list *data)
 {
 	t_vars	vars;
+	int		size_x;
+	int		size_y;
 
 	if (data->is_valid == 0)
 		return ;
 	else
 		vars.mlx = mlx_init();
-	int size_x = data->wight * 64;
-	int size_y = data->hight * 64;
+	size_x = data->wight * 64;
+	size_y = data->hight * 64;
 	vars.data = data;
 	vars.win = mlx_new_window(vars.mlx, size_x, size_y, "Worm");
 	ft_render(&vars, 0);

@@ -6,13 +6,13 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:43:48 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 12:42:26 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:27:08 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void ft_key_press(int key, t_vars *vars)
+void	ft_key_press(int key, t_vars *vars)
 {
 	if (key == XK_Up || key == XK_w)
 		move_up(vars);
