@@ -6,18 +6,17 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 20:33:46 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 20:40:13 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 23:05:25 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long_bonus.h"
 
-
-void ft_show_apple(t_vars *vars)
+void	ft_show_apple(t_vars *vars)
 {
-	int x;
-	int y;
-	char **map;
+	int		x;
+	int		y;
+	char	**map;
 
 	y = 0;
 	map = vars->data->map2d;
@@ -27,18 +26,19 @@ void ft_show_apple(t_vars *vars)
 		while (map[y][x])
 		{
 			if (map[y][x] == 'C')
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->img->apple, x * 64, y * 64);
+				mlx_put_image_to_window(vars->mlx,
+					vars->win, vars->img->apple, x * 64, y * 64);
 			x++;
 		}
 		y++;
 	}
 }
 
-void ft_hide_apple(t_vars *vars)
+void	ft_hide_apple(t_vars *vars)
 {
-	int x;
-	int y;
-	char **map;
+	int		x;
+	int		y;
+	char	**map;
 
 	y = 0;
 	map = vars->data->map2d;
@@ -48,17 +48,19 @@ void ft_hide_apple(t_vars *vars)
 		while (map[y][x])
 		{
 			if (map[y][x] == 'C')
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->img->apple_2, x * 64, y * 64);
+				mlx_put_image_to_window(vars->mlx, vars->win,
+					vars->img->apple_2, x * 64, y * 64);
 			x++;
 		}
 		y++;
 	}
 }
 
-void ft_animations(t_vars *vars)
+void	ft_animations(t_vars *vars)
 {
-	static int i;
-	static int x;
+	static int	i;
+	static int	x;
+
 	if (i % 2 == 0 && x % 5 == 0)
 		ft_hide_apple(vars);
 	else if (i % 2 != 0 && x % 5 == 0)
@@ -67,10 +69,10 @@ void ft_animations(t_vars *vars)
 	i++;
 }
 
-int my_hook(void *param)
+int	my_hook(void *param)
 {
-    t_vars			*vars;
-    static int 		x;
+	t_vars		*vars;
+	static int	x;
 
 	vars = (t_vars *)param;
 	if (x % 10000 == 0)
@@ -78,9 +80,8 @@ int my_hook(void *param)
 		ft_move_enemy(vars);
 		ft_animations(vars);
 	}
-		
 	x++;
-    return (0);
+	return (0);
 }
 
 void	start_game(t_list *data)

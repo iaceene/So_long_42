@@ -6,18 +6,17 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 21:02:13 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 18:06:31 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 23:07:34 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/so_long_bonus.h"
 
-
-void ft_find_enm(t_enemy *enm)
+void	ft_find_enm(t_enemy *enm)
 {
-	int x;
-	int y;
-	char **map;
+	int		x;
+	int		y;
+	char	**map;
 
 	map = enm->vars->data->map2d;
 	y = 0;
@@ -38,10 +37,10 @@ void ft_find_enm(t_enemy *enm)
 	}
 }
 
-void ft_move(t_enemy *enm)
+void	ft_move(t_enemy *enm)
 {
 	char	**map;
-	int i;
+	int		i;
 
 	i = rand();
 	map = enm->vars->data->map2d;
@@ -55,10 +54,10 @@ void ft_move(t_enemy *enm)
 		move_right_enm(enm);
 }
 
-void ft_move_enemy(t_vars *vars)
+void	ft_move_enemy(t_vars *vars)
 {
-	t_enemy enm;
-	static int i;
+	t_enemy		enm;
+	static int	i;
 
 	enm.vars = vars;
 	ft_find_enm(&enm);
