@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:41:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 18:42:04 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:39:05 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*xpm_converter(void *mlx, int img)
 
 	if (img == 1)
 		return (mlx_xpm_file_to_image(mlx,
-				"./bonus/src/graphic/imgs/apple.xpm", &w, &h));
+				"./bonus/src/graphic/imgs/apple_1.xpm", &w, &h));
 	if (img == 2)
 		return (mlx_xpm_file_to_image(mlx,
 				"./bonus/src/graphic/imgs/worm.xpm", &w, &h));
@@ -35,6 +35,9 @@ void	*xpm_converter(void *mlx, int img)
 	if (img == 6)
 		return (mlx_xpm_file_to_image(mlx,
 				"./bonus/src/graphic/imgs/enemy.xpm", &w, &h));
+	if (img == 7)
+		return (mlx_xpm_file_to_image(mlx,
+				"./bonus/src/graphic/imgs/apple_2.xpm", &w, &h));
 	return (NULL);
 }
 
@@ -56,6 +59,9 @@ char	*ft_set_images(t_images *img, t_vars *vars)
 	if (!img->ground)
 		return (NULL);
 	img->enemy = xpm_converter(vars->mlx, 6);
+	if (!img->enemy)
+		return (NULL);
+	img->apple_2 = xpm_converter(vars->mlx, 7);
 	if (!img->enemy)
 		return (NULL);
 	return ("Valid");

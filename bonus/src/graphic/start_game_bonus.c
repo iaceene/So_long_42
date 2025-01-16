@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 20:33:46 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 20:13:54 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:40:13 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void ft_hide_apple(t_vars *vars)
 		while (map[y][x])
 		{
 			if (map[y][x] == 'C')
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->img->ground, x * 64, y * 64);
+				mlx_put_image_to_window(vars->mlx, vars->win, vars->img->apple_2, x * 64, y * 64);
 			x++;
 		}
 		y++;
@@ -61,7 +61,7 @@ void ft_animations(t_vars *vars)
 	static int x;
 	if (i % 2 == 0 && x % 5 == 0)
 		ft_hide_apple(vars);
-	else
+	else if (i % 2 != 0 && x % 5 == 0)
 		ft_show_apple(vars);
 	x++;
 	i++;
