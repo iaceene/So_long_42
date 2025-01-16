@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:04:59 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 20:43:18 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 21:00:19 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,5 @@ int	ft_strncmp(char *str1, char *str2, size_t n)
 int	ft_charcter_check(char c)
 {
 	return (c == 'C' || c == 'P' || c == '0'
-		|| c == '1' || c == 'E' || c == '\n');
+		|| c == '1' || c == 'E' || c == '\n' || c == 'H');
 }

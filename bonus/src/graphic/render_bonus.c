@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:41:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 20:43:59 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/15 20:57:30 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,22 @@ void	*xpm_converter(void *mlx, int img)
 
 	if (img == 1)
 		return (mlx_xpm_file_to_image(mlx,
-				"./mandatory/src/graphic/imgs/apple.xpm", &w, &h));
+				"./bonus/src/graphic/imgs/apple.xpm", &w, &h));
 	if (img == 2)
 		return (mlx_xpm_file_to_image(mlx,
-				"./mandatory/src/graphic/imgs/worm.xpm", &w, &h));
+				"./bonus/src/graphic/imgs/worm.xpm", &w, &h));
 	if (img == 3)
 		return (mlx_xpm_file_to_image(mlx,
-				"./mandatory/src/graphic/imgs/wall.xpm", &w, &h));
+				"./bonus/src/graphic/imgs/wall.xpm", &w, &h));
 	if (img == 4)
 		return (mlx_xpm_file_to_image(mlx,
-				"./mandatory/src/graphic/imgs/hole.xpm", &w, &h));
+				"./bonus/src/graphic/imgs/hole.xpm", &w, &h));
 	if (img == 5)
 		return (mlx_xpm_file_to_image(mlx,
-				"./mandatory/src/graphic/imgs/ground.xpm", &w, &h));
+				"./bonus/src/graphic/imgs/ground.xpm", &w, &h));
+	if (img == 6)
+		return (mlx_xpm_file_to_image(mlx,
+				"./bonus/src/graphic/imgs/enemy.xpm", &w, &h));
 	return (NULL);
 }
 
@@ -51,6 +54,9 @@ char	*ft_set_images(t_images *img, t_vars *vars)
 		return (NULL);
 	img->ground = xpm_converter(vars->mlx, 5);
 	if (!img->ground)
+		return (NULL);
+	img->enemy = xpm_converter(vars->mlx, 6);
+	if (!img->enemy)
 		return (NULL);
 	return ("Valid");
 }
@@ -72,6 +78,9 @@ void	ft_put_img_to_win(t_images *img, void *mlx, void *win, char c)
 	else if (c == 'E')
 		mlx_put_image_to_window(mlx, win,
 			img->hole, img->x, img->y);
+	else if (c == 'H')
+		mlx_put_image_to_window(mlx, win,
+			img->enemy, img->x, img->y);
 }
 
 void	ft_put_images(t_images *img, t_vars *vars)

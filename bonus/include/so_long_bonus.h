@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 20:42:33 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 17:21:12 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_gb
 	struct s_gb	*next;
 }t_gb;
 
+
+
 typedef struct s_list
 {
 	char	*map;
@@ -45,16 +47,26 @@ typedef struct s_images
 	void	*wall;
 	void	*hole;
 	void	*ground;
+	void	*enemy;
 	int		x;
 	int		y;
 }	t_images;
 
 typedef struct s_vars {
-	void		*mlx;
-	void		*win;
-	t_list		*data;
-	t_images	*img;
+	void			*mlx;
+	void			*win;
+	t_list			*data;
+	t_images		*img;
+	struct timeval	last_time;
+    int interval;
 }				t_vars;
+
+typedef struct s_enemy
+{
+	int		x;
+	int		y;
+	t_vars	*vars;
+}t_enemy;
 
 void	*ft_malloc(ssize_t len);
 char	**ft_split(char const *s, char c);
@@ -83,4 +95,11 @@ void	ft_key_press(int key, t_vars *vars);
 void	ft_map_rebuild(t_vars *vars, int move);
 void	ft_putnbr(int n);
 void	ft_putstr(char *s);
+void	ft_move_enemy(t_vars *vars);
+// enemy move
+int	move_up_enm(t_enemy *enm);
+int	move_down_enm(t_enemy *enm);
+int	move_left_enm(t_enemy *enm);
+int	move_right_enm(t_enemy *enm);
+void	ft_map_rebuild_enem(t_enemy *enm, int move);
 #endif
