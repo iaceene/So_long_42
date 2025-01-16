@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 18:40:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 18:40:39 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 19:19:21 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		return (ft_strdup("0"));
 	nbr = ft_int_len(nbr, &len, &is_nigative);
-	str = malloc(len + 1);
+	str = ft_malloc(len + 1);
 	if (!str)
 		return (NULL);
 	str[len--] = '\0';
