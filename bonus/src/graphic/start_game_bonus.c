@@ -6,28 +6,80 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 20:33:46 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 18:21:22 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:13:54 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long_bonus.h"
-#include <sys/time.h>
+
+
+void ft_show_apple(t_vars *vars)
+{
+	int x;
+	int y;
+	char **map;
+
+	y = 0;
+	map = vars->data->map2d;
+	while (map[y])
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (map[y][x] == 'C')
+				mlx_put_image_to_window(vars->mlx, vars->win, vars->img->apple, x * 64, y * 64);
+			x++;
+		}
+		y++;
+	}
+}
+
+void ft_hide_apple(t_vars *vars)
+{
+	int x;
+	int y;
+	char **map;
+
+	y = 0;
+	map = vars->data->map2d;
+	while (map[y])
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (map[y][x] == 'C')
+				mlx_put_image_to_window(vars->mlx, vars->win, vars->img->ground, x * 64, y * 64);
+			x++;
+		}
+		y++;
+	}
+}
+
+void ft_animations(t_vars *vars)
+{
+	static int i;
+	static int x;
+	if (i % 2 == 0 && x % 5 == 0)
+		ft_hide_apple(vars);
+	else
+		ft_show_apple(vars);
+	x++;
+	i++;
+}
 
 int my_hook(void *param)
 {
     t_vars			*vars;
-    struct timeval	current_time;
-    long			elapsed_time;
+    static int 		x;
 
 	vars = (t_vars *)param;
-    gettimeofday(&current_time, NULL);
-    elapsed_time = (current_time.tv_sec - vars->last_time.tv_sec) * 1000000
-    			+ (current_time.tv_usec - vars->last_time.tv_usec);
-    if (elapsed_time >= vars->interval)
+	if (x % 10000 == 0)
 	{
-        ft_move_enemy(vars);
-        vars->last_time = current_time;
-    }
+		ft_move_enemy(vars);
+		ft_animations(vars);
+	}
+		
+	x++;
     return (0);
 }
 
@@ -43,7 +95,6 @@ void	start_game(t_list *data)
 		vars.mlx = mlx_init();
 	size_x = (data->wight - 1) * 64;
 	size_y = data->hight * 64;
-	vars.interval = 200000;
 	vars.data = data;
 	vars.win = mlx_new_window(vars.mlx, size_x, size_y, "Worm");
 	ft_render(&vars, 0);

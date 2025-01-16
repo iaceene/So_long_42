@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 19:02:07 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 19:55:49 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ typedef struct s_vars {
 	void			*win;
 	t_list			*data;
 	t_images		*img;
-	struct timeval	last_time;
-    int interval;
 }				t_vars;
 
 typedef struct s_enemy
