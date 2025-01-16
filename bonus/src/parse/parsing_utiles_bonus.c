@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:04:59 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 21:00:19 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 22:05:02 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,20 @@ void	ft_puterr(char *s)
 {
 	while (*s)
 		write(2, s++, 1);
+}
+
+int	enm_fn(char *map)
+{
+	int i;
+
+	i = 0;
+	while (map[i])
+	{
+		if (map[i] == 'H')
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 void	ft_map_set(t_list *data)

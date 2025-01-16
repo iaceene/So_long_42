@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 20:36:49 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 22:05:21 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	ft_map_checker(t_list *data);
 int		ft_check_extention(char *file);
 void	ft_map_content(t_list *data);
 void	ft_check_path(t_list *data);
+int		enm_fn(char *map);
 int		ft_init(char *file, t_list *data);
 void	start_game(t_list *data);
 int		move_up(t_vars *vars);

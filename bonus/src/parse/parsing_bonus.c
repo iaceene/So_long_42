@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 19:02:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 20:43:14 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 22:04:53 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	ft_map_content(t_list *data)
 		else if (data->map[i] == 'P')
 			start++;
 	}
-	if (exit != 1 || col < 1 || start != 1)
+	if (exit != 1 || col < 1 || start != 1 || !enm_fn(data->map))
 		data->is_valid = 0;
 }
 
