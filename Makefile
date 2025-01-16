@@ -31,7 +31,9 @@ SRC_BONUS =	./bonus/memory/memory_tracker_bonus.c \
 		./bonus/src/graphic/render_utiles_bonus.c \
 		./bonus/src/graphic/enemy/ft_enemy_ia_bonus.c \
 		./bonus/src/graphic/enemy/enemy_moves.c \
-		./bonus/src/graphic/enemy/ft_map_rebuild_bonus.c
+		./bonus/src/graphic/enemy/ft_map_rebuild_bonus.c \
+		./bonus/src/graphic/ft_itoa_bonus.c \
+		./bonus/src/graphic/display_moves_bonus.c
 
 OBJ = $(SRC:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)

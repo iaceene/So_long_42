@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:41:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 20:57:30 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:42:04 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,8 +121,8 @@ int	ft_render(t_vars *vars, int move)
 			ft_end_game(vars);
 		vars->img = &img;
 	}
-	ft_putnbr(number);
 	ft_map_rebuild(vars, move);
+	ft_display_moves(vars, ft_itoa(number));
 	number++;
 	return (0);
 }

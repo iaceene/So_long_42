@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 17:21:12 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 19:02:07 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ typedef struct s_gb
 	void		*ptr;
 	struct s_gb	*next;
 }t_gb;
-
-
 
 typedef struct s_list
 {
@@ -97,9 +95,11 @@ void	ft_putnbr(int n);
 void	ft_putstr(char *s);
 void	ft_move_enemy(t_vars *vars);
 // enemy move
-int	move_up_enm(t_enemy *enm);
-int	move_down_enm(t_enemy *enm);
-int	move_left_enm(t_enemy *enm);
-int	move_right_enm(t_enemy *enm);
+int		move_up_enm(t_enemy *enm);
+int		move_down_enm(t_enemy *enm);
+int		move_left_enm(t_enemy *enm);
+int		move_right_enm(t_enemy *enm);
 void	ft_map_rebuild_enem(t_enemy *enm, int move);
+void	ft_display_moves(t_vars *vars, char *moves);
+char	*ft_itoa(int n);
 #endif
