@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 23:26:03 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 17:56:38 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 22:36:08 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	move_up_enm(t_enemy *enm)
 	if (p == '0' || p == 'P')
 	{
 		if (p == 'P')
-				ft_end_game(enm->vars);
+				ft_end_game(enm->vars, 2);
 		else
 		{
 			map[enm->y][enm->x] = '0';
@@ -44,7 +44,7 @@ int	move_down_enm(t_enemy *enm)
 	if (p == '0' || p == 'P')
 	{
 		if (p == 'P')
-				ft_end_game(enm->vars);
+				ft_end_game(enm->vars, 2);
 		else
 		{
 			map[enm->y][enm->x] = '0';
@@ -66,7 +66,7 @@ int	move_left_enm(t_enemy *enm)
 	if (p == '0' || p == 'P')
 	{
 		if (p == 'P')
-				ft_end_game(enm->vars);
+				ft_end_game(enm->vars, 2);
 		else
 		{
 			map[enm->y][enm->x] = '0';
@@ -88,7 +88,7 @@ int	move_right_enm(t_enemy *enm)
 	if (p == '0' || p == 'P')
 	{
 		if (p == 'P')
-				ft_end_game(enm->vars);
+				ft_end_game(enm->vars, 2);
 		else
 		{
 			map[enm->y][enm->x] = '0';

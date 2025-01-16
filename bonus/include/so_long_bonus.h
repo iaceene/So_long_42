@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 22:05:21 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/16 22:32:48 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
-# include <limits.h>
 # include <X11/keysym.h>
 # include <X11/X.h>
 # include "../../mlx_linux/mlx.h"
@@ -84,7 +83,7 @@ int		move_up(t_vars *vars);
 int		move_down(t_vars *vars);
 int		move_left(t_vars *vars);
 int		move_right(t_vars *vars);
-void	ft_end_game(t_vars *vars);
+void	ft_end_game(t_vars *vars, int c);
 char	*ft_set_images(t_images *img, t_vars *vars);
 void	ft_put_images(t_images *img, t_vars *vars);
 int		ft_render(t_vars *vars, int move);
