@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/17 15:31:42 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:47:55 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,5 @@ int		move_right_enm(t_enemy *enm);
 void	ft_map_rebuild_enem(t_enemy *enm, int move);
 void	ft_display_moves(t_vars *vars, char *moves);
 char	*ft_itoa(int n);
+int		ft_destroy_win(t_vars *ptr);
 #endif

@@ -6,11 +6,17 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 18:37:41 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 23:05:57 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:48:29 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long_bonus.h"
+
+int	ft_destroy_win(t_vars *ptr)
+{
+	ft_end_game(ptr, 0);
+	return (0);
+}
 
 void	ft_display_moves(t_vars *vars, char *moves)
 {

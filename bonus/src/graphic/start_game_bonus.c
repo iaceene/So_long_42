@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 20:33:46 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/17 14:25:57 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:47:33 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,6 @@ void	start_game(t_list *data)
 	ft_render(&vars, 0);
 	mlx_key_hook(vars.win, key_hook, &vars);
 	mlx_loop_hook(vars.mlx, my_hook, &vars);
+	mlx_hook(vars.win, 17, 0, ft_destroy_win, &vars);
 	mlx_loop(vars.mlx);
 }
