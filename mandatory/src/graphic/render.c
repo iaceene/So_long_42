@@ -6,17 +6,14 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:41:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/15 23:03:58 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:30:52 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	*xpm_converter(void *mlx, int img)
+void	*xpm_converter(void *mlx, int img, int h, int w)
 {
-	int	h;
-	int	w;
-
 	if (img == 1)
 		return (mlx_xpm_file_to_image(mlx,
 				"./mandatory/src/graphic/imgs/apple.xpm", &w, &h));
@@ -37,19 +34,19 @@ void	*xpm_converter(void *mlx, int img)
 
 char	*ft_set_images(t_images *img, t_vars *vars)
 {
-	img->apple = xpm_converter(vars->mlx, 1);
+	img->apple = xpm_converter(vars->mlx, 1, 64, 64);
 	if (!img->apple)
 		return (NULL);
-	img->worm = xpm_converter(vars->mlx, 2);
+	img->worm = xpm_converter(vars->mlx, 2, 64, 64);
 	if (!img->worm)
 		return (NULL);
-	img->wall = xpm_converter(vars->mlx, 3);
+	img->wall = xpm_converter(vars->mlx, 3, 64, 64);
 	if (!img->wall)
 		return (NULL);
-	img->hole = xpm_converter(vars->mlx, 4);
+	img->hole = xpm_converter(vars->mlx, 4, 64, 64);
 	if (!img->hole)
 		return (NULL);
-	img->ground = xpm_converter(vars->mlx, 5);
+	img->ground = xpm_converter(vars->mlx, 5, 64, 64);
 	if (!img->ground)
 		return (NULL);
 	return ("Valid");

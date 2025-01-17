@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:39:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 22:39:49 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:52:07 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	ft_distory_imgs(t_vars *vars)
 	mlx_destroy_image(vars->mlx, vars->img->hole);
 	mlx_destroy_image(vars->mlx, vars->img->enemy);
 	mlx_destroy_image(vars->mlx, vars->img->apple_2);
+	mlx_destroy_image(vars->mlx, vars->img->wall_left);
+	mlx_destroy_image(vars->mlx, vars->img->wall_center);
+	mlx_destroy_image(vars->mlx, vars->img->wall_right);
 }
 
 void	ft_end_game(t_vars *vars, int c)
