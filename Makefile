@@ -44,7 +44,6 @@ NAME_BONUS = so_long_bonus
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 LDFLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
-MLX_LIB = ./mlx_linux/libmlx_Linux.a
 
 all: $(NAME)
 
@@ -52,12 +51,12 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(CFLAGS) $(LDFLAGS) $(MLX_LIB) -o $(NAME)
+	$(CC) $(OBJ) $(CFLAGS) $(LDFLAGS) -o $(NAME)
 
 bonus: $(NAME_BONUS)
 
 $(NAME_BONUS): $(OBJ_BONUS)
-	$(CC) $(OBJ_BONUS) $(CFLAGS) $(LDFLAGS) $(MLX_LIB) -o $(NAME_BONUS)
+	$(CC) $(OBJ_BONUS) $(CFLAGS) $(LDFLAGS) -o $(NAME_BONUS)
 
 clean:
 	rm -f $(OBJ) $(OBJ_BONUS)
