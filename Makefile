@@ -38,6 +38,9 @@ SRC_BONUS =	./bonus/memory/memory_tracker_bonus.c \
 OBJ = $(SRC:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
+INCLUD_BNS = ./bonus/include/so_long_bonus.h ./bonus/include/get_next_line.h
+INCLUD = ./mandatory/include/so_long.h ./mandatory/include/get_next_line.h
+
 NAME = so_long
 NAME_BONUS = so_long_bonus
 
@@ -47,7 +50,7 @@ LDFLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
 
 all: $(NAME)
 
-%.o: %.c
+%.o: %.c $(INCLUD_BNS) $(INCLUD)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
