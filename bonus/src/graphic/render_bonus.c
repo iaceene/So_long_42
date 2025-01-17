@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:41:08 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/17 16:27:13 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/17 17:38:45 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_set_images(t_images *img, t_vars *vars)
 	img->ground = xpm_converter(vars->mlx, 5, 64, 64);
 	if (!img->ground)
 		return (NULL);
-	img->enemy = xpm_converter(vars->mlx, 6, 64 ,64);
+	img->enemy = xpm_converter(vars->mlx, 6, 64, 64);
 	if (!img->enemy)
 		return (NULL);
 	img->apple_2 = xpm_converter(vars->mlx, 7, 64, 64);
