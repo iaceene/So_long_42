@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:34:47 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/16 22:32:22 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:13:48 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	move_up(t_vars *vars)
 
 	map = vars->data->map2d;
 	p = map[vars->data->player_y - 1][vars->data->player_x];
-	if (p == '0' || p == 'E' || p == 'C')
+	if (p == '0' || p == 'E' || p == 'C' || p == 'H')
 	{
 		if (p == 'E' || p == 'H')
 		{
@@ -69,7 +69,7 @@ int	move_down(t_vars *vars)
 
 	map = vars->data->map2d;
 	p = map[vars->data->player_y + 1][vars->data->player_x];
-	if (p == '0' || p == 'E' || p == 'C')
+	if (p == '0' || p == 'E' || p == 'C' || p == 'H')
 	{
 		if (p == 'E' || p == 'H')
 		{
@@ -96,7 +96,7 @@ int	move_left(t_vars *vars)
 
 	map = vars->data->map2d;
 	p = map[vars->data->player_y][vars->data->player_x - 1];
-	if (p == '0' || p == 'E' || p == 'C')
+	if (p == '0' || p == 'E' || p == 'C' || p == 'H')
 	{
 		if (p == 'E' || p == 'H')
 		{
@@ -123,7 +123,7 @@ int	move_right(t_vars *vars)
 
 	map = vars->data->map2d;
 	p = map[vars->data->player_y][vars->data->player_x + 1];
-	if (p == '0' || p == 'E' || p == 'C')
+	if (p == '0' || p == 'E' || p == 'C' || p == 'H')
 	{
 		if (p == 'E' || p == 'H')
 		{
