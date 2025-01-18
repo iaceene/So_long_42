@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/18 23:02:20 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/18 23:16:17 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <X11/keysym.h>
 # include <X11/X.h>
-# include "mlx.h"
+# include "../../mlx/mlx.h"
 # include "get_next_line.h"
 
 typedef struct s_gb

@@ -56,12 +56,12 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(CFLAGS) $(LDFLAGS) -o $(NAME)
+	$(CC) $(OBJ) $(CFLAGS) $(LDFLAGS) ./mlx/libmlx_Linux.a -o $(NAME)
 
 bonus: $(NAME_BONUS)
 
 $(NAME_BONUS): $(OBJ_BONUS)
-	$(CC) $(OBJ_BONUS) $(CFLAGS) $(LDFLAGS) -o $(NAME_BONUS)
+	$(CC) $(OBJ_BONUS) $(CFLAGS) $(LDFLAGS) ./mlx/libmlx_Linux.a -o $(NAME_BONUS)
 
 clean:
 	rm -f $(OBJ) $(OBJ_BONUS)
