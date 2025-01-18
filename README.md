@@ -118,4 +118,3 @@ The game can be controlled using the following keys:
 - **bonus/src/graphic/enemy/ft_enemy_ia_bonus.c**: Enemy AI for the bonus version.
 
 ## Thanks 
-```
