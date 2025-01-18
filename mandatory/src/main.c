@@ -18,6 +18,8 @@ int	ft_error(int err)
 		ft_puterr("Error: Usage - ./so_long Your_map.ber\n");
 	else if (err == 2)
 		ft_puterr("Error: Invalid map. Please try a different map!\n");
+	else if (err == 3)
+		ft_puterr("Error: Missing files!\n");
 	return (1);
 }
 
@@ -27,6 +29,8 @@ int	main(int c, char **v)
 
 	if (c != 2)
 		return (ft_error(1));
+	if (ft_check_file())
+		return (ft_error(3));
 	ft_init(v[1], &data);
 	if (data.is_valid == 0)
 		return (ft_error(2), ft_malloc(-1), 1);

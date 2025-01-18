@@ -58,6 +58,7 @@ typedef struct s_vars {
 void	*ft_malloc(ssize_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(char *s);
+int		ft_check_file(void);
 void	ft_puterr(char *s);
 void	ft_map_set(t_list *data);
 int		ft_strncmp(char *str1, char *str2, size_t n);

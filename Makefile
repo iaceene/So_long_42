@@ -4,6 +4,7 @@ SRC =	./mandatory/memory/memory_tracker.c \
 		./mandatory/src/get_next_line/get_next_line.c \
 		./mandatory/src/parse/ft_splite.c \
 		./mandatory/src/parse/parsing.c \
+		./mandatory/src/parse/file_checker.c \
 		./mandatory/src/parse/parsing_utiles.c \
 		./mandatory/src/parse/ft_check_path.c \
 		./mandatory/src/graphic/start_game.c \
