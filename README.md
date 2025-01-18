@@ -1,7 +1,6 @@
-![Solong](https://github.com/user-attachments/assets/7b9911bd-36e6-4416-889e-b40e4e11bd7a)
+# SoLong - Worm Game
 
-```markdown
-# SoLong - 2D Game
+![Solong](https://github.com/user-attachments/assets/7b9911bd-36e6-4416-889e-b40e4e11bd7a)
 
 SoLong is a 2D game developed as part of the 42 school. The game was built using the **MLX 42** library, and it features both mandatory and bonus parts. The objective is to navigate a character through a map, collecting items and avoiding obstacles.
 
