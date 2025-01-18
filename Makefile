@@ -21,6 +21,7 @@ SRC_BONUS =	./bonus/memory/memory_tracker_bonus.c \
 		./bonus/src/get_next_line/get_next_line_bonus.c \
 		./bonus/src/parse/ft_splite_bonus.c \
 		./bonus/src/parse/parsing_bonus.c \
+		./bonus/src/parse/file_checker_bonus.c \
 		./bonus/src/parse/parsing_utiles_bonus.c \
 		./bonus/src/parse/ft_check_path_bonus.c \
 		./bonus/src/graphic/start_game_bonus.c \

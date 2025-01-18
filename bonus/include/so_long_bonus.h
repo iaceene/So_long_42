@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:36:30 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/17 16:32:05 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/18 23:02:20 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	*ft_malloc(ssize_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(char *s);
 void	ft_puterr(char *s);
+int		ft_check_file(void);
 void	ft_map_set(t_list *data);
 int		ft_strncmp(char *str1, char *str2, size_t n);
 int		ft_charcter_check(char c);
