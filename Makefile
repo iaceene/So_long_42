@@ -48,7 +48,7 @@ NAME_BONUS = so_long_bonus
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-LDFLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
+LDFLAGS = -lXext -lX11 -lm -lz
 
 all: $(NAME)
 
